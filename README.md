@@ -1,10 +1,17 @@
+        _/      _/                                _/_/_/_/  _/      _/   
+       _/_/  _/_/    _/_/_/  _/  _/_/    _/_/_/  _/          _/  _/      
+      _/  _/  _/  _/    _/  _/_/      _/_/      _/_/_/        _/         
+     _/      _/  _/    _/  _/            _/_/  _/          _/  _/        
+    _/      _/    _/_/_/  _/        _/_/_/    _/        _/      _/       
+
+
 Simple little jQuery script to add behaviours to a website declaritively(?).
 
-Usage:
+## Usage:
 
 Include the Script..
 
-Image Rollovers:
+### Image Rollovers
 
 Decorate your image tags with .mars-rollover and you will get rollovers when the image is rollover'ed
 
@@ -12,7 +19,7 @@ Decorate your image tags with .mars-rollover and you will get rollovers when the
     -> 
     <img src='/images/blah-over.png' class='mars-rollover' />
 
-Search input default text clearerer
+### Default text clearerer
 
 Decorate an input with .mars-search-clear and it will clear the search field when focused, and unclear (if there is no text) on unfocus
 
