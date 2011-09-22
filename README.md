@@ -5,7 +5,7 @@
     /_/  /_/  \__,_/ /_/    /____/ /_/      /_/|_|
 
 
-Simple little jQuery script to add behaviours to a website declaritively(?).
+Simple little jQuery script to add behaviours to a website declaratively via classes. Zoom Zoom!
 
 ## Usage:
 
