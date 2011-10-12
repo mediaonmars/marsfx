@@ -40,15 +40,15 @@
     searchClear: function() {
       var search = $("input.mars-search-clear");
       search.each(function() {
-        var orig = search.val();
+        this.orig = $(this).val();
         function clear() {
-          if (search.val() != orig) return;
-          search.val("");
+          if ($(this).val() != this.orig) return;
+          $(this).val("");
         }
         function set() {
           // if there is something in there return
-          if (!!search.val()) return;
-          search.val(orig);
+          if (!!$(this).val()) return;
+          $(this).val(this.orig);
         }
         $(this).focus(clear).blur(set);
       });
