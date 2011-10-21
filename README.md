@@ -9,7 +9,7 @@ Simple little jQuery script to add behaviours to a website declaratively via cla
 
 ## Usage:
 
-Include the Script..
+Include the Script...
 
 ### Image Rollovers
 
@@ -21,9 +21,15 @@ Decorate your image tags with .mars-rollover and you will get rollovers when the
 
 ### Default text clearerer
 
-Decorate an input with .mars-search-clear and it will clear the search field when focused, and unclear (if there is no text) on unfocus
+Decorate an input with .mars-input-clear and it will clear the input field when focused, and unclear (if there is no text changes) on unfocus
 
-    <input name='search' class='mars-search-clear' value='Search...' />
+    <input name='search' class='mars-input-clear' value='Search...' />
+
+#Password Clearer
+
+Create a password field, put the value in of whatever you want the user to see (i.e. Password!), this function will replace the origional password field with a text field, with your value in it. when the user focuses, it get's switched back to the origional password input
+
+    <input name='search' class='mars-password' value='Password' />
 
 Wazzam!
 
