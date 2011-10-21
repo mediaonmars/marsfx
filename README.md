@@ -25,9 +25,9 @@ Decorate an input with .mars-input-clear and it will clear the input field when 
 
     <input name='search' class='mars-input-clear' value='Search...' />
 
-#Password Clearer
+###Password Clearer
 
-Create a password field, put the value in of whatever you want the user to see (i.e. Password!), this function will replace the origional password field with a text field, with your value in it. when the user focuses, it get's switched back to the origional password input
+Create a password field, decorate with .mars-password, put the value in of whatever you want the user to see (i.e. Password!), this function will replace the origional password field with a text field, with your value in it. When the user focuses, it get's switched back to the origional password input
 
     <input name='search' class='mars-password' value='Password' />
 
