@@ -1,6 +1,6 @@
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-  (function() {
+  (function($) {
     var MarsFX, log;
     log = function() {
       if (console.log) {

@@ -1,4 +1,4 @@
-(->
+(($) ->
 
   log = () ->
     console.log(arguments) if console.log
