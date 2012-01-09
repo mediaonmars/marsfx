@@ -1,2 +1,5 @@
 .redcar/
 .rvmrc
+test/source/javascripts/mars*.coffee
+test/build
+test/.sass-cache/
