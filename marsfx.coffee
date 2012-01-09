@@ -43,15 +43,22 @@
           @viewable.attr "class", @orig.attr("class")
           @viewable.attr "id", @orig.attr("id")
           @orig.replaceWith(@viewable)
-        
+
           @viewable.focus =>
             @viewable.replaceWith(@orig)
             @orig.val ""
             @orig.focus()
-        
-  $(document).ready ->
+    slideshow: ->
+      return unless $.fn.marsSlideshow?
+      slideshows = $(".mars-slideshow")
+      slideshows.marsSlideshow()
+
+  run = =>
     for fn of MarsFX
       #log "calling #{fn}"
       MarsFX[fn]()
-    false
+
+  root = exports ? this
+
+  root.marsfx = {run: run}
 )(jQuery)
