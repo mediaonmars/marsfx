@@ -1,7 +1,7 @@
 (function() {
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
   (function($) {
-    var MarsFX, log;
+    var MarsFX, log, root, run;
     log = function() {
       if (console.log) {
         return console.log(arguments);
@@ -70,14 +70,27 @@
             return this.orig.focus();
           }, this));
         });
+      },
+      slideshow: function() {
+        var slideshows;
+        if ($.fn.marsSlideshow == null) {
+          return;
+        }
+        slideshows = $(".mars-slideshow");
+        return slideshows.marsSlideshow();
       }
     };
-    return $(document).ready(function() {
-      var fn;
+    run = __bind(function() {
+      var fn, _results;
+      _results = [];
       for (fn in MarsFX) {
-        MarsFX[fn]();
+        _results.push(MarsFX[fn]());
       }
-      return false;
-    });
+      return _results;
+    }, this);
+    root = typeof exports !== "undefined" && exports !== null ? exports : this;
+    return root.marsfx = {
+      run: run
+    };
   })(jQuery);
 }).call(this);
