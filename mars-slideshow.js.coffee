@@ -9,12 +9,17 @@ $.fn.marsSlideshow = $.fn.slideshow = (opts) ->
   opts = $.extend defaults, opts
 
   return @.each ->
+    elOpts = {}
+    $this = $(this)
+    elOpts.wait = $this.data("mars-slideshow-wait") if $this.data("mars-slideshow-wait")
+    elOpts.transition = $this.data("mars-slideshow-transition") if $this.data("mars-slideshow-transition")
+    elOpts = $.extend opts, elOpts
     current = 0
     transitioning = 0
     fadedIn = =>
       current = transitioning
       $(images[current]).attr("style", "display: block")
-      setTimeout transition, opts.wait
+      setTimeout transition, elOpts.wait
     setTransitionStyles = (c, t)->
       styles =
         top: c.offset().top
@@ -28,8 +33,8 @@ $.fn.marsSlideshow = $.fn.slideshow = (opts) ->
       $current = $(images[current])
       $transitioning = $(images[transitioning])
       setTransitionStyles $current, $transitioning
-      $current.fadeOut(opts.transition)
-      $transitioning.fadeIn(opts.transition, fadedIn)
+      $current.fadeOut(elOpts.transition)
+      $transitioning.fadeIn(elOpts.transition, fadedIn)
 
     waitForLoad = =>
       loaded = false
@@ -38,7 +43,7 @@ $.fn.marsSlideshow = $.fn.slideshow = (opts) ->
         unless Math.min(el.width(), el.height()) is 0
           loaded = true
       if loaded
-        setTimeout transition, opts.wait
+        setTimeout transition, elOpts.wait
       else
         setTimeout waitForLoad, 100
 
