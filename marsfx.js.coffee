@@ -52,6 +52,9 @@
       return unless $.fn.marsSlideshow?
       slideshows = $(".mars-slideshow")
       slideshows.marsSlideshow()
+    zebra: ->
+      zebras = $ "table.mars-zebra"
+      zebras.find("tr:odd").addClass("odd")
 
   run = =>
     for fn of MarsFX

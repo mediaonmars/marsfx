@@ -1,3 +1,29 @@
-- content_for :head do
-  %title The Middleman!
-%h1 The Middleman is watching.
+%p
+  .mars-slideshow
+    - d = Dir["source/images/slideshow/*"].map{ |f| a = f.split("/"); a.shift; a.shift; a.join("/")}
+    = image_tag d.shift
+    - d.each do |f|
+      = image_tag f, :class => "hidden"
+
+%p
+  %input.mars-input-clear{:value => "Hide when clicked!"}
+
+%p
+  %h1 Rollover
+
+  = image_tag "rollover/01.jpg", :class => "mars-rollover"
+
+
+%p
+  %h1 Zebra Tables
+
+  %table.mars-zebra.wide
+    %tr
+      %th Header
+    %tr
+      %td First
+    %tr
+      %td Second
+    %tr
+      %td Third
+  
